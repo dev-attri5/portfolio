@@ -6,6 +6,8 @@ import Hero from './sections/Hero'
 import About from './sections/About'
 import Skills from './sections/Skills'
 import Projects from './sections/Projects'
+import CodingProfiles from './sections/CodingProfiles'
+import Education from './sections/Education'
 
 export default function App() {
   return (
@@ -20,72 +22,11 @@ export default function App() {
         <Skills />
         <Projects />
 
-        {/* Coding Profiles Section (to be extracted into component in Phase 6) */}
-        <section id="profiles" className="section-container py-16 md:py-24 border-b border-border/50">
-          <SectionHeading
-            tag="Coding Profiles"
-            title="Problem Solving & Code"
-            subtitle="Verified profiles where I practice algorithmic problem solving and maintain code repositories."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a
-              href="https://leetcode.com/u/dev-attri/"
-              target="_blank"
-              rel="noreferrer"
-              className="p-6 rounded-xl border border-border bg-surface hover:border-accent/40 hover:bg-surface-hover transition-colors block"
-            >
-              <h3 className="font-semibold text-text-main mb-1">LeetCode</h3>
-              <p className="text-xs text-text-muted">leetcode.com/u/dev-attri</p>
-            </a>
-            <a
-              href="https://www.geeksforgeeks.org/profile/devattu1v8"
-              target="_blank"
-              rel="noreferrer"
-              className="p-6 rounded-xl border border-border bg-surface hover:border-accent/40 hover:bg-surface-hover transition-colors block"
-            >
-              <h3 className="font-semibold text-text-main mb-1">GeeksforGeeks</h3>
-              <p className="text-xs text-text-muted">profile/devattu1v8</p>
-            </a>
-            <a
-              href="https://github.com/dev-attri5"
-              target="_blank"
-              rel="noreferrer"
-              className="p-6 rounded-xl border border-border bg-surface hover:border-accent/40 hover:bg-surface-hover transition-colors block"
-            >
-              <h3 className="font-semibold text-text-main mb-1">GitHub</h3>
-              <p className="text-xs text-text-muted">github.com/dev-attri5</p>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/dev-attri-51051a386/"
-              target="_blank"
-              rel="noreferrer"
-              className="p-6 rounded-xl border border-border bg-surface hover:border-accent/40 hover:bg-surface-hover transition-colors block"
-            >
-              <h3 className="font-semibold text-text-main mb-1">LinkedIn</h3>
-              <p className="text-xs text-text-muted">Dev Attri</p>
-            </a>
-          </div>
-        </section>
+        {/* Supporting Sections */}
+        <CodingProfiles />
+        <Education />
 
-        {/* Education Section (to be extracted into component in Phase 6) */}
-        <section id="education" className="section-container py-16 md:py-24 border-b border-border/50">
-          <SectionHeading
-            tag="Academic Background"
-            title="Education"
-            subtitle="Current university degree and academic track."
-          />
-          <div className="p-8 rounded-xl border border-border bg-surface max-w-2xl">
-            <span className="text-xs font-semibold px-2.5 py-1 rounded bg-bg text-accent border border-border inline-block mb-3">
-              3rd Semester (Current)
-            </span>
-            <h3 className="text-xl font-bold text-text-main">
-              Bachelor of Technology — Computer Science and Engineering
-            </h3>
-            <p className="text-text-muted mt-1 font-medium">GLA University, Mathura</p>
-          </div>
-        </section>
-
-        {/* Contact Section (to be extracted into component in Phase 7) */}
+        {/* Contact Section (to be modularized in Phase 7) */}
         <section id="contact" className="section-container py-16 md:py-24">
           <SectionHeading
             tag="Contact"
