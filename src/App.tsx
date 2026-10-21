@@ -1,122 +1,77 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+const currentYear = new Date().getFullYear()
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="min-h-screen bg-bg text-text-main flex flex-col">
+      <header className="border-b border-border py-4 bg-surface/50 backdrop-blur-sm sticky top-0 z-50">
+        <div className="section-container flex items-center justify-between">
+          <span className="font-semibold text-lg tracking-tight text-text-main">
+            Dev Attri
+          </span>
+          <nav aria-label="Main Navigation" className="flex items-center gap-6 text-sm text-text-muted">
+            <a href="#test" className="hover:text-accent transition-colors">
+              Design System Test
+            </a>
+          </nav>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      </header>
 
-      <div className="ticks"></div>
+      <main id="main-content" className="flex-1">
+        <section className="section-container py-16 md:py-24" id="test">
+          <div className="max-w-3xl">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-surface border border-border text-accent mb-4">
+              Phase 2 Design System Verification
+            </span>
+            <h1 className="hero-title text-text-main mb-6">
+              Modern, Dark &amp; Developer-Focused
+            </h1>
+            <p className="text-text-muted text-lg mb-8 leading-relaxed">
+              Verifying design tokens, typography scales, contrast standards, and responsive container constraints from Design.md.
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <button
+                type="button"
+                className="px-5 py-2.5 rounded-lg bg-accent text-bg font-medium hover:bg-accent-hover transition-colors shadow-sm cursor-pointer"
+              >
+                Primary Button
+              </button>
+              <button
+                type="button"
+                className="px-5 py-2.5 rounded-lg border border-border bg-surface text-text-main font-medium hover:bg-surface-hover hover:border-accent/40 transition-colors cursor-pointer"
+              >
+                Secondary Button
+              </button>
+            </div>
+          </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-colors">
+              <h2 className="text-lg font-semibold text-text-main mb-2">Surface Token</h2>
+              <p className="text-sm text-text-muted leading-relaxed">
+                Cards and surfaces render at #121620 with subtle border #293140 and high-contrast text.
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-colors">
+              <h2 className="text-lg font-semibold text-text-main mb-2">Accent Token</h2>
+              <p className="text-sm text-text-muted leading-relaxed">
+                Accent points to #7C9CFF for actions, with hover #9BB3FF and focus indicator compliance.
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-colors">
+              <h2 className="text-lg font-semibold text-text-main mb-2">Accessibility</h2>
+              <p className="text-sm text-text-muted leading-relaxed">
+                Focus-visible rings, reduced motion handling, semantic hierarchy, and mobile overflow protection.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <footer className="border-t border-border py-8 text-center text-sm text-text-muted">
+        <div className="section-container">
+          <p>© {currentYear} Dev Attri. Design system verified.</p>
+        </div>
+      </footer>
+    </div>
   )
 }
-
-export default App
