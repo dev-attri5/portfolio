@@ -91,15 +91,17 @@ body {
 
 /* Typography clamp classes */
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.02em;
+  word-break: break-word;
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.01em;
+  word-break: break-word;
 }

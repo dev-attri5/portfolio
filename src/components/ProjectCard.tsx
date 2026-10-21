@@ -7,7 +7,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="rounded-xl border border-border bg-surface hover:border-accent/40 transition-colors flex flex-col justify-between p-6 sm:p-7 shadow-sm">
+    <article className="rounded-xl border border-border bg-surface hover:border-accent/40 transition-colors flex flex-col justify-between p-5 sm:p-6 lg:p-7 shadow-sm">
       <div>
         {/* Header: Status and Placeholder indicator */}
         <div className="flex items-center justify-between gap-2 mb-4">

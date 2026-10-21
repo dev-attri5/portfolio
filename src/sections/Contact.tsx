@@ -29,7 +29,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Main Direct Contact Card */}
-          <div className="lg:col-span-7 p-8 rounded-xl border border-border bg-surface shadow-sm">
+          <div className="lg:col-span-7 p-5 sm:p-7 md:p-8 rounded-xl border border-border bg-surface shadow-sm">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 rounded-lg bg-bg border border-border text-accent">
                 <Mail className="w-6 h-6" aria-hidden="true" />

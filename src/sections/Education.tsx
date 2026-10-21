@@ -13,7 +13,7 @@ export default function Education() {
         />
 
         <div className="max-w-3xl">
-          <div className="p-8 rounded-xl border border-border bg-surface shadow-sm">
+          <div className="p-5 sm:p-7 md:p-8 rounded-xl border border-border bg-surface shadow-sm">
             {/* Header / Institution */}
             <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
               <div>
