@@ -17,6 +17,14 @@ dist-ssr
 .env.*
 !.env.example
 
+# Internal specification and prompt documents
+Architecture.md
+Design.md
+Display Name.docx
+Phases.md
+PRD.md
+Rules.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
