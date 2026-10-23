@@ -3,13 +3,80 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Dynamic Copyright Year
+  // 1. Theme Management (Dark Mode / Light Mode with Glass Tokens)
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+  const themeIconSun = document.getElementById('theme-icon-sun');
+  const themeIconMoon = document.getElementById('theme-icon-moon');
+  const themeMobileText = document.getElementById('theme-mobile-text');
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  const getInitialTheme = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme;
+    }
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  };
+
+  const applyTheme = (theme) => {
+    const isDark = theme === 'dark';
+    
+    // Toggle class on root
+    if (isDark) {
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+      if (metaThemeColor) metaThemeColor.setAttribute('content', '#0B0D12');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+      if (metaThemeColor) metaThemeColor.setAttribute('content', '#F8FAFC');
+    }
+
+    // Update icons
+    if (themeIconSun && themeIconMoon) {
+      themeIconSun.style.display = isDark ? 'block' : 'none';
+      themeIconMoon.style.display = isDark ? 'none' : 'block';
+    }
+
+    // Update mobile toggle label
+    if (themeMobileText) {
+      themeMobileText.textContent = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+    }
+
+    // Update ARIA labels
+    const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    if (themeToggle) themeToggle.setAttribute('aria-label', label);
+    if (themeToggleMobile) themeToggleMobile.setAttribute('aria-label', label);
+
+    localStorage.setItem('theme', theme);
+  };
+
+  // Initialize theme
+  const currentTheme = getInitialTheme();
+  applyTheme(currentTheme);
+
+  // Toggle handlers
+  const toggleTheme = () => {
+    const active = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+    applyTheme(active);
+  };
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+
+  if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', toggleTheme);
+  }
+
+  // 2. Dynamic Copyright Year
   const yearElement = document.getElementById('current-year');
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
 
-  // 2. Mobile Menu Drawer Navigation
+  // 3. Mobile Menu Drawer Navigation
   const menuToggle = document.getElementById('menu-toggle');
   const mobileNav = document.getElementById('mobile-nav');
   const menuIcon = document.getElementById('menu-icon');
@@ -58,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. Copy Email to Clipboard with Visual Feedback
+  // 4. Copy Email to Clipboard with Visual Feedback
   const copyEmailBtn = document.getElementById('copy-email-btn');
   const copyBtnText = document.getElementById('copy-btn-text');
   const copyBtnIcon = document.getElementById('copy-btn-icon');

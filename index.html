@@ -38,6 +38,21 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Theme Initialization Script (Prevents FOUC) -->
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        if (saved === 'light' || (!saved && prefersLight)) {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <!-- Accessibility Skip Link -->
@@ -57,6 +72,32 @@
           <a href="#education" class="nav-link">Education</a>
           <a href="#contact" class="nav-link">Contact</a>
           <a href="#contact" class="btn btn-secondary btn-sm">Get in touch</a>
+
+          <!-- Desktop Theme Toggle Button -->
+          <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle-btn"
+            aria-label="Toggle theme"
+            title="Toggle dark and light mode"
+          >
+            <!-- Sun icon (shown in dark mode to switch to light) -->
+            <svg id="theme-icon-sun" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <!-- Moon icon (shown in light mode to switch to dark) -->
+            <svg id="theme-icon-moon" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
         </nav>
 
         <!-- Mobile Menu Toggle Button -->
@@ -90,7 +131,29 @@
           <a href="#education" class="mobile-nav-link">Education</a>
           <a href="#contact" class="mobile-nav-link">Contact</a>
         </nav>
-        <div style="padding-top: 1rem;">
+        
+        <div style="padding-top: 0.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+          <!-- Mobile Theme Toggle -->
+          <button
+            type="button"
+            id="theme-toggle-mobile"
+            class="btn btn-secondary"
+            style="width: 100%; justify-content: center; gap: 0.5rem;"
+          >
+            <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <span id="theme-mobile-text">Switch to Light Mode</span>
+          </button>
+
           <a href="#contact" class="btn btn-primary mobile-nav-link" style="text-align: center; border-radius: var(--radius-md);">
             Contact Dev
           </a>
