@@ -33,10 +33,792 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="shortcut icon" href="favicon.svg" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Sticky Header -->
+    <header class="header">
+      <div class="section-container header-container">
+        <a href="#hero" class="brand-link">Dev Attri</a>
+
+        <!-- Desktop Navigation -->
+        <nav aria-label="Desktop Navigation" class="desktop-nav">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#profiles" class="nav-link">Profiles</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#contact" class="btn btn-secondary btn-sm">Get in touch</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          type="button"
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Toggle navigation menu"
+        >
+          <svg id="menu-icon" class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+          <svg id="close-icon" class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-nav" class="mobile-nav-drawer">
+        <nav aria-label="Mobile Navigation" class="mobile-nav-links">
+          <a href="#about" class="mobile-nav-link">About</a>
+          <a href="#skills" class="mobile-nav-link">Skills</a>
+          <a href="#projects" class="mobile-nav-link">Projects</a>
+          <a href="#profiles" class="mobile-nav-link">Profiles</a>
+          <a href="#education" class="mobile-nav-link">Education</a>
+          <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+        <div style="padding-top: 1rem;">
+          <a href="#contact" class="btn btn-primary mobile-nav-link" style="text-align: center; border-radius: var(--radius-md);">
+            Contact Dev
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Landmarks -->
+    <main id="main-content">
+      <!-- 1. Hero Section -->
+      <section id="hero" class="section">
+        <div class="section-container">
+          <div class="hero-content">
+            <div class="badge">
+              <span class="badge-pulse" aria-hidden="true"></span>
+              <span>GLA University • 3rd Semester CSE</span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="text-accent">Dev Attri</span>.
+            </h1>
+
+            <p class="hero-headline">
+              B.Tech CSE Student | Java Developer | Problem Solver
+            </p>
+
+            <p class="hero-bio">
+              I'm a Computer Science Engineering student passionate about Java development, data structures, and building real-world software applications.
+            </p>
+
+            <div class="btn-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore Projects</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </a>
+
+              <a href="#contact" class="btn btn-secondary">
+                <span>Get in Touch</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="connect-bar">
+              <span class="connect-label">Connect:</span>
+              <div class="connect-icons">
+                <a href="https://github.com/dev-attri5" target="_blank" rel="noreferrer" class="icon-btn" aria-label="GitHub Profile">
+                  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/dev-attri-51051a386/" target="_blank" rel="noreferrer" class="icon-btn" aria-label="LinkedIn Profile">
+                  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+                <a href="https://leetcode.com/u/dev-attri/" target="_blank" rel="noreferrer" class="icon-btn" aria-label="LeetCode Profile">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </a>
+                <a href="mailto:devattri099@gmail.com" class="icon-btn" aria-label="Send Email">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. About Section -->
+      <section id="about" class="section">
+        <div class="section-container">
+          <div class="section-heading">
+            <span class="badge">About Me</span>
+            <h2 class="section-title">Background &amp; Engineering Focus</h2>
+            <p class="section-subtitle">
+              Undergraduate computer science student dedicated to building clean software systems and sharpening algorithmic skills.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                I am currently in my 3rd semester of <strong>Bachelor of Technology (B.Tech)</strong> in Computer Science and Engineering at <strong>GLA University</strong>, Mathura, Uttar Pradesh.
+              </p>
+              <p>
+                My primary technical focus centers on <strong>Java development</strong> and solving algorithmic challenges. I spend significant time working through data structure problems on platforms like LeetCode and GeeksforGeeks, reinforcing theoretical concepts with practical code.
+              </p>
+              <p>
+                Beyond language syntax, I am interested in computer science fundamentals—understanding how memory is managed, how operating systems schedule tasks, and how modular object-oriented design keeps software maintainable over time.
+              </p>
+              <p>
+                I believe in writing clear, well-documented code and continuously expanding my developer toolkit through structured coursework and hands-on coding exercises.
+              </p>
+            </div>
+
+            <div class="highlight-stack">
+              <div class="highlight-card">
+                <div class="highlight-icon">
+                  <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 style="font-size: 0.875rem; font-weight: 600; color: var(--color-text);">Academic Track</h3>
+                  <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;">
+                    GLA University • 3rd Semester
+                  </p>
+                </div>
+              </div>
+
+              <div class="highlight-card">
+                <div class="highlight-icon">
+                  <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3 style="font-size: 0.875rem; font-weight: 600; color: var(--color-text);">Primary Focus</h3>
+                  <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;">
+                    Java Development &amp; Data Structures / Algorithms
+                  </p>
+                </div>
+              </div>
+
+              <div class="highlight-card">
+                <div class="highlight-icon">
+                  <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 style="font-size: 0.875rem; font-weight: 600; color: var(--color-text);">CS Foundations</h3>
+                  <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;">
+                    OOP, Operating Systems &amp; Computer Networks
+                  </p>
+                </div>
+              </div>
+
+              <div class="highlight-card">
+                <div class="highlight-icon">
+                  <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 style="font-size: 0.875rem; font-weight: 600; color: var(--color-text);">Current Goal</h3>
+                  <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;">
+                    Strengthening problem solving and preparing for software engineering internships.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Skills Section -->
+      <section id="skills" class="section">
+        <div class="section-container">
+          <div class="section-heading">
+            <span class="badge">Technical Skills</span>
+            <h2 class="section-title">Skills &amp; Technologies</h2>
+            <p class="section-subtitle">
+              Genuine technical skills, core concepts, and development tools currently in active practice.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <!-- Languages -->
+            <div class="card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="font-size: 1rem; font-weight: 600; color: var(--color-text);">Programming Languages</h3>
+                <span style="font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">3 skills</span>
+              </div>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Java</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Python</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>C</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- CS Fundamentals -->
+            <div class="card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="font-size: 1rem; font-weight: 600; color: var(--color-text);">CS Fundamentals</h3>
+                <span style="font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">4 skills</span>
+              </div>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Data Structures &amp; Algorithms</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Object-Oriented Programming</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Operating Systems</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Computer Networks</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Web Development -->
+            <div class="card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="font-size: 1rem; font-weight: 600; color: var(--color-text);">Web Development</h3>
+                <span style="font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">2 skills</span>
+              </div>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>HTML</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>CSS</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tools & IDEs -->
+            <div class="card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="font-size: 1rem; font-weight: 600; color: var(--color-text);">Development Tools</h3>
+                <span style="font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">4 skills</span>
+              </div>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Git</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>GitHub</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>IntelliJ IDEA</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>VS Code</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Currently Learning -->
+            <div class="card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="font-size: 1rem; font-weight: 600; color: var(--color-text);">Currently Learning</h3>
+                <span style="font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">2 skills</span>
+              </div>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Advanced Java</span>
+                </li>
+                <li class="skill-item">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Python Application Development</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Projects Section -->
+      <section id="projects" class="section">
+        <div class="section-container">
+          <div class="section-heading">
+            <span class="badge">Projects</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">
+              Software projects, academic coursework applications, and developer tools.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <!-- Project 1 -->
+            <article class="project-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <span class="status-pill status-progress">
+                    <span style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--color-accent);"></span>
+                    In Progress
+                  </span>
+                  <span style="font-size: 0.6875rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">Coursework Plan</span>
+                </div>
+
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">
+                  Data Structures &amp; Algorithms in Java
+                </h3>
+                <p style="font-size: 0.875rem; font-weight: 500; color: var(--color-text-muted); margin-bottom: 1rem;">
+                  Comprehensive collection of custom data structure implementations and algorithm benchmarks.
+                </p>
+                <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+                  A structured repository containing clean Java implementations of fundamental data structures (Linked Lists, Binary Trees, Stacks, Queues, Graphs) and classic algorithmic solutions.
+                </p>
+
+                <div class="tag-list">
+                  <span class="tag">Java</span>
+                  <span class="tag">Algorithms</span>
+                  <span class="tag">Data Structures</span>
+                  <span class="tag">Git</span>
+                </div>
+              </div>
+
+              <div style="padding-top: 1rem; border-top: 1px solid rgba(41, 49, 64, 0.5);">
+                <a href="https://github.com/dev-attri5" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <span class="status-pill status-progress">
+                    <span style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--color-accent);"></span>
+                    In Progress
+                  </span>
+                  <span style="font-size: 0.6875rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">Coursework Plan</span>
+                </div>
+
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">
+                  Student Academic Portal Console Application
+                </h3>
+                <p style="font-size: 0.875rem; font-weight: 500; color: var(--color-text-muted); margin-bottom: 1rem;">
+                  Terminal-based course management and student record processing system.
+                </p>
+                <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+                  Coursework software application simulating semester registration, grading evaluations, and student records management using object-oriented principles.
+                </p>
+
+                <div class="tag-list">
+                  <span class="tag">Java</span>
+                  <span class="tag">OOP</span>
+                  <span class="tag">File I/O</span>
+                </div>
+              </div>
+
+              <div style="padding-top: 1rem; border-top: 1px solid rgba(41, 49, 64, 0.5);">
+                <a href="https://github.com/dev-attri5" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <span class="status-pill status-completed">
+                    <span style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--color-success);"></span>
+                    Completed
+                  </span>
+                  <span style="font-size: 0.6875rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">Coursework Plan</span>
+                </div>
+
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">
+                  Developer Portfolio Website
+                </h3>
+                <p style="font-size: 0.875rem; font-weight: 500; color: var(--color-text-muted); margin-bottom: 1rem;">
+                  Modern, responsive, accessible portfolio built with pure semantic HTML, CSS, and JavaScript.
+                </p>
+                <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+                  Single-page static portfolio designed with strict adherence to WCAG 2.2 AA accessibility standards, fluid clamp typography, and dark theme design tokens with zero external dependencies.
+                </p>
+
+                <div class="tag-list">
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+
+              <div style="padding-top: 1rem; border-top: 1px solid rgba(41, 49, 64, 0.5);">
+                <a href="https://github.com/dev-attri5" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Coding Profiles Section -->
+      <section id="profiles" class="section">
+        <div class="section-container">
+          <div class="section-heading">
+            <span class="badge">Coding Profiles</span>
+            <h2 class="section-title">Problem Solving &amp; Platforms</h2>
+            <p class="section-subtitle">
+              Direct links to my authentic developer profiles where I solve algorithmic problems and publish code.
+            </p>
+          </div>
+
+          <div class="grid-4">
+            <!-- LeetCode -->
+            <a href="https://leetcode.com/u/dev-attri/" target="_blank" rel="noreferrer" class="profile-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <div class="highlight-icon">
+                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <span style="font-size: 0.6875rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">Competitive</span>
+                </div>
+
+                <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.25rem;">LeetCode</h3>
+                <p style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--color-accent); margin-bottom: 0.75rem;">@dev-attri</p>
+                <p style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Practicing algorithmic problem solving and data structures in Java.</p>
+              </div>
+
+              <div style="padding-top: 1rem; margin-top: 1rem; border-top: 1px solid rgba(41, 49, 64, 0.4); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted);">
+                <span>View Profile</span>
+                <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </div>
+            </a>
+
+            <!-- GeeksforGeeks -->
+            <a href="https://www.geeksforgeeks.org/profile/devattu1v8" target="_blank" rel="noreferrer" class="profile-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <div class="highlight-icon">
+                    <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="4 17 10 11 4 5"></polyline>
+                      <line x1="12" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                  </div>
+                  <span style="font-size: 0.6875rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">Problem Solving</span>
+                </div>
+
+                <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.25rem;">GeeksforGeeks</h3>
+                <p style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--color-accent); margin-bottom: 0.75rem;">@devattu1v8</p>
+                <p style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Technical articles, CS fundamentals, and practice problems.</p>
+              </div>
+
+              <div style="padding-top: 1rem; margin-top: 1rem; border-top: 1px solid rgba(41, 49, 64, 0.4); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted);">
+                <span>View Profile</span>
+                <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/dev-attri5" target="_blank" rel="noreferrer" class="profile-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <div class="highlight-icon">
+                    <svg class="icon-lg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                  </div>
+                  <span style="font-size: 0.6875rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">Repositories</span>
+                </div>
+
+                <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.25rem;">GitHub</h3>
+                <p style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--color-accent); margin-bottom: 0.75rem;">@dev-attri5</p>
+                <p style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Open source repositories, coursework labs, and project codebases.</p>
+              </div>
+
+              <div style="padding-top: 1rem; margin-top: 1rem; border-top: 1px solid rgba(41, 49, 64, 0.4); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted);">
+                <span>View Profile</span>
+                <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/dev-attri-51051a386/" target="_blank" rel="noreferrer" class="profile-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <div class="highlight-icon">
+                    <svg class="icon-lg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </div>
+                  <span style="font-size: 0.6875rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">Network</span>
+                </div>
+
+                <h3 style="font-size: 1rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.25rem;">LinkedIn</h3>
+                <p style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--color-accent); margin-bottom: 0.75rem;">@dev-attri-51051a386</p>
+                <p style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Professional networking, engineering learning journey, and updates.</p>
+              </div>
+
+              <div style="padding-top: 1rem; margin-top: 1rem; border-top: 1px solid rgba(41, 49, 64, 0.4); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted);">
+                <span>View Profile</span>
+                <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Education Section -->
+      <section id="education" class="section">
+        <div class="section-container">
+          <div class="section-heading">
+            <span class="badge">Academic Background</span>
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">
+              Formal academic coursework and undergraduate computer science studies.
+            </p>
+          </div>
+
+          <div style="max-width: 48rem;">
+            <div class="card" style="box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                <div>
+                  <span class="status-pill status-progress" style="margin-bottom: 0.75rem;">
+                    <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                    <span>Undergraduate Degree</span>
+                  </span>
+                  <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-text);">
+                    Bachelor of Technology (B.Tech)
+                  </h3>
+                  <p style="font-size: 1rem; font-weight: 600; color: rgba(244, 246, 250, 0.9); margin-top: 0.25rem;">
+                    Computer Science and Engineering
+                  </p>
+                </div>
+
+                <div>
+                  <span style="display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-text-muted);">
+                    <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>3rd Semester</span>
+                  </span>
+                </div>
+              </div>
+
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(41, 49, 64, 0.5);">
+                <span style="font-weight: 500; color: var(--color-text);">GLA University</span>
+                <span style="color: var(--color-border);">•</span>
+                <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Mathura, Uttar Pradesh</span>
+                </span>
+              </div>
+
+              <div>
+                <h4 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  <span>Relevant Coursework:</span>
+                </h4>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Data Structures &amp; Algorithms</span>
+                  <span class="tag">Object-Oriented Programming (Java)</span>
+                  <span class="tag">Computer Organization &amp; Architecture</span>
+                  <span class="tag">Discrete Mathematics</span>
+                  <span class="tag">Operating Systems Foundations</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Contact Section -->
+      <section id="contact" class="section">
+        <div class="section-container">
+          <div class="section-heading">
+            <span class="badge">Get In Touch</span>
+            <h2 class="section-title">Contact &amp; Collaboration</h2>
+            <p class="section-subtitle">
+              Interested in collaborating on a project, discussing software engineering, or exploring internship opportunities? Feel free to reach out directly.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Direct Email Card -->
+            <div class="card">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                <div class="highlight-icon">
+                  <svg class="icon-xl text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text);">Direct Email</h3>
+                  <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.125rem;">
+                    Fastest route for communication and professional inquiries
+                  </p>
+                </div>
+              </div>
+
+              <div class="email-copy-box">
+                <span class="email-text">devattri099@gmail.com</span>
+                <button
+                  type="button"
+                  id="copy-email-btn"
+                  class="btn btn-secondary btn-sm"
+                  aria-label="Copy email address"
+                >
+                  <span id="copy-btn-icon" style="display: inline-flex; align-items: center;">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </span>
+                  <span id="copy-btn-text">Copy Email</span>
+                </button>
+              </div>
+
+              <div class="btn-group" style="margin-bottom: 0;">
+                <a href="mailto:devattri099@gmail.com" class="btn btn-primary">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  <span>Open Mail Client</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/dev-attri-51051a386/" target="_blank" rel="noreferrer" class="btn btn-secondary">
+                  <svg class="icon text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <span>Message on LinkedIn</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Availability & Platforms -->
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="card">
+                <h4 style="font-size: 0.875rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.5rem;">
+                  Availability &amp; Location
+                </h4>
+                <p style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                  Currently open to internship opportunities, student developer programs, and open source collaboration. Based in Mathura, Uttar Pradesh, India.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(41, 49, 64, 0.5); font-size: 0.75rem; color: var(--color-text-muted);">
+                  <div style="display: flex; justify-content: space-between;">
+                    <span>Status:</span>
+                    <span style="font-weight: 600; color: var(--color-success); display: inline-flex; align-items: center; gap: 0.375rem;">
+                      <span class="badge-pulse" style="width: 0.375rem; height: 0.375rem;" aria-hidden="true"></span>
+                      Open to opportunities
+                    </span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span>University:</span>
+                    <span style="font-weight: 600; color: var(--color-text);">GLA University</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <h4 style="font-size: 0.875rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.75rem;">
+                  Connect Across Platforms
+                </h4>
+                <div style="display: flex; gap: 0.75rem;">
+                  <a href="https://github.com/dev-attri5" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm" style="flex: 1; border-radius: var(--radius-md);">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/dev-attri-51051a386/" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm" style="flex: 1; border-radius: var(--radius-md);">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section-container footer-container">
+        <div>
+          <p style="font-weight: 600; color: var(--color-text);">Dev Attri</p>
+          <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;">
+            B.Tech Computer Science Engineering Student • GLA University
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="https://github.com/dev-attri5" target="_blank" rel="noreferrer" class="footer-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/dev-attri-51051a386/" target="_blank" rel="noreferrer" class="footer-link">LinkedIn</a>
+          <a href="https://leetcode.com/u/dev-attri/" target="_blank" rel="noreferrer" class="footer-link">LeetCode</a>
+          <a href="https://www.geeksforgeeks.org/profile/devattu1v8" target="_blank" rel="noreferrer" class="footer-link">GeeksforGeeks</a>
+        </div>
+
+        <p style="font-size: 0.75rem; color: var(--color-text-muted);">
+          © <span id="current-year"></span> Dev Attri. Built with HTML, CSS &amp; JavaScript.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
   </body>
 </html>
